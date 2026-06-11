@@ -9,9 +9,11 @@ import textwrap
 
 from google.genai import types
 from google.adk.agents import llm_agent
+from google.adk.models.lite_llm import LiteLlm
 from google.adk import runners
 from google.adk.plugins import base_plugin
 
+from core.config import LLM_MODEL
 from core.utils import chat_with_agent
 
 
@@ -92,7 +94,7 @@ If UNSAFE, add a brief reason on the next line.
 # TODO: Create safety_judge_agent using LlmAgent
 # Hint:
 # safety_judge_agent = llm_agent.LlmAgent(
-#     model="gemini-2.0-flash",
+#     model=LiteLlm(model=LLM_MODEL),
 #     name="safety_judge",
 #     instruction=SAFETY_JUDGE_INSTRUCTION,
 # )

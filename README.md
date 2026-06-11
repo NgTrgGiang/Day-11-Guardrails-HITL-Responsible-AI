@@ -44,15 +44,15 @@ Day-11-Guardrails-HITL-Responsible-AI/
 ### Google Colab (recommended)
 
 1. Upload `notebooks/lab11_guardrails_hitl.ipynb` to Google Colab
-2. Create a Google API Key at [Google AI Studio](https://aistudio.google.com/apikey)
-3. Save the API key in Colab Secrets as `GOOGLE_API_KEY`
+2. Create an OpenAI API Key at [OpenAI Platform](https://platform.openai.com/api-keys)
+3. Save the API key in Colab Secrets as `OPENAI_API_KEY`
 4. Run cells in order
 
 ### Local (Notebook)
 
 ```bash
 pip install -r requirements.txt
-export GOOGLE_API_KEY="your-api-key-here"
+export OPENAI_API_KEY="your-api-key-here"
 jupyter notebook notebooks/lab11_guardrails_hitl.ipynb
 ```
 
@@ -61,7 +61,8 @@ jupyter notebook notebooks/lab11_guardrails_hitl.ipynb
 ```bash
 cd src/
 pip install -r ../requirements.txt
-export GOOGLE_API_KEY="your-api-key-here"
+# Either export the key, or put OPENAI_API_KEY in a .env file at the project root
+export OPENAI_API_KEY="your-api-key-here"
 
 # Run the full lab
 python main.py
@@ -81,9 +82,9 @@ python hitl/hitl.py
 
 ### Tools Used
 
-- **Google ADK** — Agent Development Kit (plugins, runners)
+- **Google ADK** — Agent Development Kit (plugins, runners), using OpenAI models via LiteLLM
 - **NeMo Guardrails** — NVIDIA framework with Colang (declarative safety rules)
-- **Gemini 2.5 Flash/Flash Lite** — LLM backend (you can switch to other models if you want)
+- **OpenAI GPT-4o-mini** — LLM backend (you can switch to other models if you want)
 
 ## Lab Structure (2.5 hours)
 
